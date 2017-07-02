@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "onlyone" %>
+<div class="main">
+ <div class="form-5">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :dni %>
+  <%= f.input :ruc %>
+  <%= f.input :address %>
+  <%= f.input :telephone %>
+  <%= f.input :email %>
+  <center>
+  <div class="btn-group">
+    <%= f.button :submit %>
+  <button class="back"><%= link_to 'Back', users_path %></button>
+  </div>
+  </center>
+<% end %>
+</div>
+</div>

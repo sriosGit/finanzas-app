@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @account.amount %>
+</p>
+
+<p>
+  <strong>Rate type:</strong>
+  <%= @account.rate_type %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @account.interest %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @account.period %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @account.rate %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@account.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

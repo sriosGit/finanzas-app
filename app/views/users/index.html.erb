@@ -1,0 +1,79 @@
+<div class="git_gud_margin">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+<center>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dni</th>
+      <th>Ruc</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      
+      <tr onClick="goToProfile(<%=user.id%>);">
+        <td><%= user.name %></td>
+        <td><%= user.dni %></td>
+        <td><%= user.ruc %></td>
+        <td><%= user.address %></td>
+        <td><%= user.telephone %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path,
+            { :class=>"btn btn-primary white" }  %>
+
+</center>
+</div>
+<script>
+  function goToProfile(id){
+    window.location.href = '/users/' + id
+  }
+</script>
+<style>
+.flat-table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+}
+  th {
+    background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+  }
+  td {
+    background-color: rgb(238, 238, 238);
+    color: rgb(111, 111, 111);
+    padding: 20px 30px;
+  }
+		
+.git_gud_margin{
+  margin-left: 37px;
+  margin-right: 37px;
+}
+
+.white{
+  color: white !important;
+}
+</style>

@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "onlyone" %>
+<div class="main">
+ <div class="form-5">
+<%= simple_form_for @account do |f| %>
+  <%= f.input :amount %>
+  <%= f.input :rate_type, collection: @rate_type, prompt: "Select your rate type"%>
+  <%= f.input :rate %>
+  <%= f.input :time %> 
+  <%= f.input :period %> 
+
+ 
+   <%= f.input :user_id, collection: User.all, prompt: "Select an user"%>
+  <%= f.input :capitalization %>
+  <center>
+  <div class="btn-group">
+    <%= f.button :submit %>
+  <button class="back"><%= link_to 'Back', accounts_path %></button>
+  </div>
+  </center>
+<% end %>
+</div>
+</div>
+
+<style>
+
+</style>
+
+
+
+
+
